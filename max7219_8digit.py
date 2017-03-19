@@ -1,5 +1,5 @@
 # Licence: GPLv3
-# Copyright Paul Dwerryhouse <paul@dwerryhouse.com.au> 2017
+# Copyright 2017 Paul Dwerryhouse <paul@dwerryhouse.com.au>
 
 CHAR_MAP = {
     '0': 0x7e, '1': 0x30, '2': 0x6d, '3': 0x79,
