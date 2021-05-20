@@ -46,9 +46,9 @@ class Display:
         self.set_register(REG_SHUTDOWN, 1)
 
     def set_register(self, register, value):
-        self.ss.low()
+        self.ss.off()
         self.spi.write(bytearray([register, value]))
-        self.ss.high()
+        self.ss.on()
 
     def decode_char(self, c):
         d = CHAR_MAP.get(c)
