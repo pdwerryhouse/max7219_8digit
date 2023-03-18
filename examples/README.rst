@@ -4,6 +4,8 @@ on an ESP8266 with micropython.
 
 To use:
 
-  import simple_clock
-  simple_clock.start()
+.. code:: python
+
+   import simple_clock
+   simple_clock.start()
 
