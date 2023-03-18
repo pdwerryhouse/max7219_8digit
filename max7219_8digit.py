@@ -61,6 +61,30 @@ class Display:
         for i in range(0,8):
             self.buffer[7-i] = self.decode_char(s[i])
         
+    def write_to_buffer_with_dots(self, s):
+
+      len_s = len(s)
+
+      x = 0
+      i = 0
+      while i < len_s:
+
+        if x >= 8:
+          break
+
+        elif i < (len_s - 1) and s[i+1] == '.':
+          self.buffer[7-x] = self.decode_char(s[i]) | 0x80
+          i += 1
+        else:
+          self.buffer[7-x] = self.decode_char(s[i])
+
+        x += 1
+        i += 1
+
+      while x < 8:
+        self.buffer[7-x] = self.decode_char(' ')
+        x += 1
+
     def display(self):
         for i in range(0,8):
             self.set_register(REG_DIGIT_BASE + i, self.buffer[i])
