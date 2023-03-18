@@ -1,7 +1,7 @@
 
 This is a micropython library for MAX7219 + 8 x 7digit display boards.
 
-I have tested it with an ESP8266 running micropython.
+I have tested it with both an ESP8266 and a ESP32, running micropython version 1.19.1.
 
 Requires a minimum of three spare GPIO lines to run SPI.
 
@@ -18,6 +18,8 @@ Example of use:
    from machine import Pin, SPI
    import max7219_8digit
    
+   # the max7219 doesn't use the MISO, but unfortunately SoftSPI requires that
+   # we specify it anyway
    spi = SoftSPI(baudrate=100000, polarity=1, phase=0, sck=Pin(4), mosi=Pin(2), miso=Pin(0))
 
    ss = Pin(5, Pin.OUT)
