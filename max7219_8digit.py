@@ -89,5 +89,6 @@ class Display:
         for i in range(0,8):
             self.set_register(REG_DIGIT_BASE + i, self.buffer[i])
 
-    def intensity(self, i):
-        self.send(self.INTENSITY, i)
+    def set_intensity(self, i):
+        self.intensity = i
+        self.set_register(REG_INTENSITY, self.intensity)
